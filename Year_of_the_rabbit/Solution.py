@@ -2,17 +2,15 @@
 
 def solution(A, B):
     N = len(A)
-    Index_B = list(range(N))
 
     for pos in range(N):
-        Found = True
+        found = True
         for i in range(N):
-            if A[i] == B[Index_B[i]]:
-                Found = False
+            if A[i] == B[i-pos]:
+                found = False
                 break
-        if Found:
+        if found:
             return (pos)
-        Index_B = [Index_B[-1]] + Index_B[:-1]
     return (-1)
 
 
